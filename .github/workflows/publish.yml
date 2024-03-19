@@ -1,9 +1,14 @@
 name: Publish Markdown Files
 
+env:
+  SOURCE_DIRECTORY: published # Replace with the path to the directory you want to copy
+  TARGET_REPO: ${{ secrets.TARGET_REPO }}
+  TARGET_DIRECTORY: src/content/post # Replace with the path to the directory you want to replace
+  PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
 on:
   push:
-    branches:
-      - main # Replace with the branch you want to monitor
+    branches: [main]
 
 jobs:
   publish:
@@ -12,21 +17,29 @@ jobs:
       - name: Checkout source repository
         uses: actions/checkout@v3
         with:
+          path: source_repo
           fetch-depth: 0
 
-      - name: Copy directory
-        env:
-          TARGET_REPO: ${{ secrets.TARGET_REPO }}
-          TARGET_DIRECTORY: src/content/post # Replace with the path to the directory you want to replace
-          SOURCE_DIRECTORY: published # Replace with the path to the directory you want to copy
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      - name: Checkout target repository
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ env.TARGET_REPO }}
+          token: ${{ PERSONAL_ACCESS_TOKEN }}
+          path: target_repo
+
+      - name: Remove existing contents in target directory
         run: |
-          git clone https://${PERSONAL_ACCESS_TOKEN}@github.com/${TARGET_REPO}.git srleom/cloned-blog
-          rm -rf srleom/cloned-blog/${TARGET_DIRECTORY}
-          cp -r ${SOURCE_DIRECTORY} srleom/cloned-blog/${TARGET_DIRECTORY}
-          cd srleom/cloned-blog
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          rm -rf target_repo/${{ TARGET_DIRECTORY }}/*
+
+      - name: Copy directory contents from source to target
+        run: |
+          cp -r source_repo/${{ SOURCE_DIRECTORY }}/. target_repo/${{ TARGET_DIRECTORY }}/
+
+      - name: Commit and push changes
+        run: |
+          cd target_repo
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@users.noreply.github.com'
           git add .
-          git commit -m "Update ${TARGET_DIRECTORY} from source repository"
+          git commit -m "Replace directory contents"
           git push
