@@ -29,11 +29,11 @@ jobs:
 
       - name: Remove existing contents in target directory
         run: |
-          rm -rf target_repo/${{ TARGET_DIRECTORY }}/*
+          rm -rf target_repo/${{ env.TARGET_DIRECTORY }}/*
 
       - name: Copy directory contents from source to target
         run: |
-          cp -r source_repo/${{ SOURCE_DIRECTORY }}/. target_repo/${{ TARGET_DIRECTORY }}/
+          cp -r source_repo/${{ env.SOURCE_DIRECTORY }}/. target_repo/${{ env.TARGET_DIRECTORY }}/
 
       - name: Commit and push changes
         run: |
