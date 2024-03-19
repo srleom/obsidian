@@ -21,10 +21,10 @@ jobs:
           SOURCE_DIRECTORY: published # Replace with the path to the directory you want to copy
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
-          git clone https://${PERSONAL_ACCESS_TOKEN}@github.com/${TARGET_REPO}.git srleom/blog
-          rm -rf srleom/blog/${TARGET_DIRECTORY}
-          cp -r ${SOURCE_DIRECTORY} srleom/blog/${TARGET_DIRECTORY}
-          cd srleom/blog
+          git clone https://${PERSONAL_ACCESS_TOKEN}@github.com/${TARGET_REPO}.git srleom/cloned-blog
+          rm -rf srleom/cloned-blog/${TARGET_DIRECTORY}
+          cp -r ${SOURCE_DIRECTORY} srleom/cloned-blog/${TARGET_DIRECTORY}
+          cd srleom/cloned-blog
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
