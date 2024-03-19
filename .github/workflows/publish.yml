@@ -19,9 +19,9 @@ jobs:
           TARGET_REPO: ${{ secrets.TARGET_REPO }}
           TARGET_DIRECTORY: src/content/post # Replace with the path to the directory you want to replace
           SOURCE_DIRECTORY: published # Replace with the path to the directory you want to copy
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
-          git clone https://${GITHUB_TOKEN}@github.com/${TARGET_REPO}.git srleom/blog
+          git clone https://${PERSONAL_ACCESS_TOKEN}@github.com/${TARGET_REPO}.git srleom/blog
           rm -rf srleom/blog/${TARGET_DIRECTORY}
           cp -r ${SOURCE_DIRECTORY} srleom/blog/${TARGET_DIRECTORY}
           cd srleom/blog
