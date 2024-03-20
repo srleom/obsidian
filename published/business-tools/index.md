@@ -8,7 +8,7 @@ coverImage:
   alt: "A cartoon illustration of a businessman at work with many useful tools"
 ---
 
-Here's a compilation of business-related tools and resources I use when working on business projects. Cheers!
+Here's a compilation of business-related tools and resources I use when working on business projects.
 
 ## [Namelix](https://namelix.com/): for coming up with business names
 
