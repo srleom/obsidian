@@ -1,6 +1,6 @@
 ---
 title: "Business tools for entrepreneurs"
-description: "A compilation of the business-related tools I use"
+description: "A compilation of business-related tools I use"
 publishDate: "20 Mar 2024"
 tags: ["business", "resources"]
 coverImage:
