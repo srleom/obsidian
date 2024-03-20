@@ -28,16 +28,8 @@ Brandmark is an AI-powered logo generation tool that generates high-quality logo
 
 Instant Domain Search is a domain registrar, but I use it as a domain availability checker simply because it's the fastest one I've used. Simply enter the domain name you wish to secure, and it will indicate at breakneck speed which domain extensions (e.g. `.com` or `.org`) are still available for registration. The tool also has some cool features, like generating additional domain names based on the name you keyed in and indicating their availability as well. Side note, I've experienced some cases of incongruence where the tool showed a domain was available when it was actually taken, but these cases are far and between. 
 
-## [namecheap](https://www.namecheap.com/): for registering your domain
+## [Namecheap](https://www.namecheap.com/): for registering your domain
 
 ![Namecheap website](./namecheap.jpg)
 
 I use namecheap as my primary and only domain registrar, because of its good price, simple user interface, and DNS customizability. Not much to add, but here's a quick tip: namecheap usually runs discount campaigns during festivities such as Black Friday, so those are good times to snag your preferred domains at an even lower cost.
-
-
-
-
-
-
-
-
