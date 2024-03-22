@@ -11,7 +11,9 @@ coverImage:
 
 Getting started on a business project is not easy. There is an infinitely generating list of tasks to tick off the to-do list, from coming up with a business plan and name to building the product, raising funding... and the list goes on. Thankfully, there are tools others have built to make this journey a smoother ride. This compilation goes to all the self-starters and entrepreneurs who aspire to make a positive impact on people and society at large. 
 
-### TLDR;
+## TLDR;
+
+Here's the list of business tools I use on a day-to-day basis:
 - [Namelix](https://namelix.com/): for coming up with business names
 - [Brandmark](https://brandmark.io/): for generation of logos
 - [Instant Domains](https://instantdomains.com/): for checking if a domain name is still available
