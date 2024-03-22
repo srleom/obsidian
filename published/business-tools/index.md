@@ -1,8 +1,8 @@
 ---
-title: "Business tools for self-starters"
-description: "A compilation of business tools I use"
-publishDate: "20 Mar 2024"
-updatedDate: "22 Mar 2024"
+title: Business tools for self-starters
+description: A compilation of business tools I use
+publishDate: 20 Mar 2024
+updatedDate: 22 Mar 2024
 tags: ["business", "resources"]
 coverImage:
   src: "./cover.jpg"
